@@ -1,1 +1,0 @@
-var Contoh_Stash;
