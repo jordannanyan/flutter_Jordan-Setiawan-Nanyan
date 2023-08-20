@@ -1,1 +1,1 @@
-Conflict FeatureA
+Conflict FeatureA 1
