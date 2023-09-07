@@ -1,6 +1,6 @@
 Pada Soal Introduction Flutter and Flutter widget kami mempelajari yaitu:
 
-1. kami mempelajari lebih lanjut penggunaan class pada oop.
-2. apa itu inheritance pada class.
-3. apa itu interface pada class.
-4. dan apa itu abstract class.
+1. kami mempelajari perkenalan awal flutter.
+2. apa itu statefull widget.
+3. apa itu stateless widget.
+4. apa saja build in widget.
