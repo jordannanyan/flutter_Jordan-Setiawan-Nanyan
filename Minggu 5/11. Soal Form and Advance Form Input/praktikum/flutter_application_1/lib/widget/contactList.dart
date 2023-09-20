@@ -7,7 +7,8 @@ class ContactList extends StatelessWidget {
   final Function(int) onEdit;
   final Function(int) onDelete;
 
-  ContactList({
+  const ContactList({
+    super.key,
     required this.contacts,
     required this.onEdit,
     required this.onDelete,
