@@ -36,8 +36,8 @@ class _PrioritasDuaState extends State<PrioritasDua> {
     return true;
   }
 
-  void addContact(String name, String number) {
-    final contact = Contact(name, number);
+  void addContact(String nameAdd, String number) {
+    final contact = Contact(nameAdd, number);
     setState(() {
       contacts.add(contact);
       nameController.clear();
