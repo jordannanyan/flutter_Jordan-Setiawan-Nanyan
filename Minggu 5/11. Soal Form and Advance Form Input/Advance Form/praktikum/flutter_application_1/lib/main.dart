@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/page/PrioritasDua.dart';
-import 'package:flutter_application_1/page/PrioritasSatu.dart';
 
 void main() {
   runApp(const MyApp());
