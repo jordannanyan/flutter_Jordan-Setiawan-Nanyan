@@ -370,11 +370,13 @@ class _PrioritasDuaState extends State<PrioritasDua> {
                           isPhoneNumberValid(phoneNo) &&
                           formattedDate.isNotEmpty))
                       ? () {
-                          addContact(
-                              name, phoneNo, formattedDate, colors, fileName);
+                          print(name);
+                          print(phoneNo);
                           print(formattedDate);
                           print(colors);
                           print(fileName);
+                          addContact(
+                              name, phoneNo, formattedDate, colors, fileName);
                         }
                       : null,
                   child: const Text(
