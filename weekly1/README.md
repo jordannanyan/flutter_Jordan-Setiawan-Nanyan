@@ -1,1 +1,1 @@
-Berikut adalah hasil tugas code ompetence yang telah saya kerjakan, tugas ini meliputi penggunaan input form, dan alert dialog.
+Berikut adalah hasil tugas code competence yang telah saya kerjakan, tugas ini meliputi penggunaan input form, dan alert dialog.
