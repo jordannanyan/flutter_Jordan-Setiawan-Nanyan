@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/components/image_sheet.dart';
-import 'package:flutter_application_1/modal/image_modal.dart';
+import 'package:flutter_application_1/model/image_model.dart';
 
 class ListGambar extends StatefulWidget {
   const ListGambar({super.key});
@@ -20,7 +20,6 @@ class _ListGambarState extends State<ListGambar> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        automaticallyImplyLeading: false,
         title: const Text(
           'Flutter Gallery',
           style: TextStyle(
@@ -29,6 +28,41 @@ class _ListGambarState extends State<ListGambar> {
         ),
         centerTitle: true,
         backgroundColor: Colors.black,
+      ),
+      drawer: Drawer(
+        backgroundColor: Colors.black,
+        child: Column(
+          children: [
+            ListTile(
+              title: const Text(
+                "Gambar",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 18,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+              onTap: () {
+                Navigator.of(context).pop();
+              },
+            ),
+            ListTile(
+              title: const Text(
+                "Contact",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 18,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+              onTap: () {
+                Navigator.of(context).pushNamed(
+                  '/contact',
+                );
+              },
+            ),
+          ],
+        ),
       ),
       body: Container(
         padding: const EdgeInsets.all(16),
