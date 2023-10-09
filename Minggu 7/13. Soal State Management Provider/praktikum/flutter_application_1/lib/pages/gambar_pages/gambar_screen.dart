@@ -1,0 +1,125 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_application_1/widget/image_sheet_widget.dart';
+import 'package:flutter_application_1/model/image_list_model.dart';
+
+class ListGambar extends StatelessWidget {
+  ListGambar({super.key});
+
+  final List<ImageList> items = [
+    ImageList(imagePath: 'assets/photo1.jpeg', imageName: 'Foto Pertama'),
+    ImageList(imagePath: 'assets/photo2.jpg', imageName: 'Foto Kedua'),
+    ImageList(imagePath: 'assets/photo3.jpg', imageName: 'Foto Ketiga'),
+    ImageList(imagePath: 'assets/photo4.jpg', imageName: 'Foto Keempat'),
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text(
+          'Flutter Gallery',
+          style: TextStyle(
+            fontSize: 24,
+          ),
+        ),
+        centerTitle: true,
+        backgroundColor: Colors.black,
+      ),
+      drawer: Drawer(
+        backgroundColor: Colors.black,
+        child: Column(
+          children: [
+            const SizedBox(
+              height: 48,
+            ),
+            ListTile(
+              title: const Text(
+                "Gambar",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 18,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+              onTap: () {
+                Navigator.of(context).pop();
+              },
+            ),
+            ListTile(
+              title: const Text(
+                "Contact",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 18,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+              onTap: () {
+                Navigator.of(context).pushNamed(
+                  '/contact',
+                );
+              },
+            ),
+          ],
+        ),
+      ),
+      body: Container(
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Container(
+                decoration: const BoxDecoration(
+                  border: BorderDirectional(
+                    bottom: BorderSide(color: Color(0xFF000000), width: 2),
+                  ),
+                ),
+                child: const Text(
+                  'Tugas flutter minggu enam, mengenai assets, dialog, dan navigation',
+                ),
+              ),
+            ),
+            const SizedBox(
+              height: 16,
+            ),
+            Expanded(
+              child: GridView.builder(
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  crossAxisSpacing: 10,
+                  mainAxisSpacing: 10,
+                ),
+                itemCount: items.length,
+                itemBuilder: (BuildContext context, int index) {
+                  return GridTile(
+                    child: GestureDetector(
+                      child: Image(
+                        image: AssetImage(items[index].imagePath),
+                        fit: BoxFit.cover,
+                      ),
+                      onTap: () {
+                        showModalBottomSheet(
+                          shape: const RoundedRectangleBorder(
+                            borderRadius: BorderRadius.vertical(
+                              top: Radius.circular(20),
+                            ),
+                          ),
+                          context: context,
+                          builder: (context) => ImageBottomSheet(
+                            imagePath: items[index].imagePath,
+                            imageName: items[index].imageName,
+                          ),
+                        );
+                      },
+                    ),
+                  );
+                },
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
