@@ -4,6 +4,7 @@ OpenAI memungkinkan pengembang untuk membuat aplikasi yang memanfaatkan kecerdas
 
 OpenAI menyediakan API yang memungkinkan pengembang untuk terhubung dengan model kecerdasan buatan mereka, seperti GPT-3.
 Pengembang dapat mengakses API ini dengan menggunakan API key yang disediakan oleh OpenAI.
+
 2. Mendapatkan Rekomendasi AI:
 
 Dengan API OpenAI, pengembang dapat mengirimkan permintaan teks atau pertanyaan ke model kecerdasan buatan.
